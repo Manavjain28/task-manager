@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import api from '../config/api';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
 
@@ -16,7 +16,7 @@ const Dashboard = () => {
   const fetchTasks = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/tasks');
+      const response = await api.get('/api/tasks');
       setTasks(response.data.tasks);
       setError('');
     } catch (error) {
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   const addTask = async (taskData) => {
     try {
-      const response = await axios.post('/api/tasks', taskData);
+      const response = await api.post('/api/tasks', taskData);
       setTasks([response.data.task, ...tasks]);
       setError('');
     } catch (error) {
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
   const updateTask = async (taskId, updateData) => {
     try {
-      const response = await axios.put(`/api/tasks/${taskId}`, updateData);
+      const response = await api.put(`/api/tasks/${taskId}`, updateData);
       setTasks(tasks.map(task => 
         task._id === taskId ? response.data.task : task
       ));
@@ -53,7 +53,7 @@ const Dashboard = () => {
 
   const deleteTask = async (taskId) => {
     try {
-      await axios.delete(`/api/tasks/${taskId}`);
+      await api.delete(`/api/tasks/${taskId}`);
       setTasks(tasks.filter(task => task._id !== taskId));
       setError('');
     } catch (error) {
