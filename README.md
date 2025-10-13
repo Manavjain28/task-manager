@@ -135,7 +135,7 @@ npm run build
 # Serve the build folder with a static server
 ```
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Register a new user
@@ -216,57 +216,3 @@ task-manager-app/
 - **Input Validation**: Server-side validation for all inputs
 - **CORS Protection**: Configured for secure cross-origin requests
 - **Protected Routes**: All task operations require authentication
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-1. **MongoDB Connection Error**
-   - Ensure MongoDB is running
-   - Check the MONGO_URI in your .env file
-   - Verify MongoDB is accessible on the specified port
-
-2. **JWT Token Errors**
-   - Check if JWT_SECRET is set in .env
-   - Ensure token is being sent in Authorization header
-   - Verify token hasn't expired
-
-3. **CORS Issues**
-   - Backend CORS is configured for localhost:3000
-   - Update CORS settings if using different ports
-
-4. **Port Already in Use**
-   - Change PORT in .env file
-   - Kill processes using the ports: `npx kill-port 3000` or `npx kill-port 5000`
-
-## 🚀 Deployment
-
-### Backend Deployment (Render/Vercel)
-1. Set environment variables in your hosting platform
-2. Ensure MongoDB Atlas connection string is configured
-3. Deploy the backend folder
-
-### Frontend Deployment (Netlify/Vercel)
-1. Build the frontend: `npm run build`
-2. Deploy the build folder
-3. Update API endpoints to point to your deployed backend
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📞 Support
-
-If you encounter any issues or have questions, please open an issue in the repository.
-
----
-
-**Happy Task Managing! 🎉**
