@@ -1,14 +1,14 @@
-# 🚀 Quick Deployment Guide for Task Manager
+# 🚀 Single URL Deployment Guide for Task Manager
 
-Your project is now ready for deployment! Here are the **fastest** ways to get it live:
+Your project is now configured for **single URL deployment**! Both frontend and backend will be served from one URL.
 
-## 🎯 Option 1: Vercel (Recommended - 5 minutes)
+## 🎯 Vercel Deployment (Recommended - 5 minutes)
 
-### Step 1: Deploy Backend
+### Single URL Deployment
 1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
 2. Click **"New Project"**
 3. Import your `task-manager` repository
-4. Set **Root Directory** to `backend`
+4. **Keep Root Directory as default** (don't change it)
 5. Add these Environment Variables:
    ```
    MONGO_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
@@ -16,17 +16,7 @@ Your project is now ready for deployment! Here are the **fastest** ways to get i
    NODE_ENV=production
    ```
 6. Click **"Deploy"**
-7. Copy your backend URL (e.g., `https://task-manager-backend.vercel.app`)
-
-### Step 2: Deploy Frontend
-1. Create another Vercel project
-2. Set **Root Directory** to `frontend`
-3. Add Environment Variable:
-   ```
-   REACT_APP_API_URL=https://your-backend-url.vercel.app
-   ```
-4. Click **"Deploy"**
-5. Copy your frontend URL
+7. Your app will be available at a single URL! 🎉
 
 ## 🎯 Option 2: Render + Netlify (Alternative)
 
@@ -53,9 +43,8 @@ Your project is now ready for deployment! Here are the **fastest** ways to get i
 4. Replace `<password>` with your password
 5. Add IP address to whitelist (0.0.0.0/0 for all)
 
-## 🔗 Your URLs Will Be:
-- **Frontend**: `https://task-manager-frontend.vercel.app`
-- **Backend**: `https://task-manager-backend.vercel.app`
+## 🔗 Your Single URL Will Be:
+- **App**: `https://task-manager.vercel.app` (both frontend and backend!)
 
 ## ⚡ Quick Test:
 1. Visit your frontend URL
