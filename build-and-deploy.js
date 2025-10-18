@@ -19,12 +19,11 @@ try {
   
   console.log('\n✅ Build completed successfully!');
   console.log('\n📋 Next steps:');
-  console.log('1. Deploy to Vercel: vercel --prod');
-  console.log('2. Set environment variables:');
+  console.log('1. Set environment variables:');
   console.log('   - MONGO_URI: Your MongoDB Atlas connection string');
   console.log('   - JWT_SECRET: A secure random string');
   console.log('   - NODE_ENV: production');
-  console.log('\n🌐 Your app will be available at a single URL!');
+  console.log('\n🚀 Your app is ready for deployment!');
   
 } catch (error) {
   console.error('❌ Build failed:', error.message);

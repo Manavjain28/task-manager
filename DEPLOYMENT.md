@@ -4,26 +4,7 @@ This guide will help you deploy your Task Manager MERN application to the cloud.
 
 ## 🚀 Quick Deployment Options
 
-### Option 1: Vercel (Recommended - Free & Fast)
-
-#### Backend Deployment (Vercel)
-1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
-2. Click "New Project" and import your `task-manager` repository
-3. Set the **Root Directory** to `backend`
-4. Add Environment Variables:
-   - `MONGO_URI`: Your MongoDB Atlas connection string
-   - `JWT_SECRET`: A secure random string (e.g., `your-super-secret-jwt-key-here`)
-   - `NODE_ENV`: `production`
-5. Click "Deploy"
-
-#### Frontend Deployment (Vercel)
-1. Create another Vercel project
-2. Set the **Root Directory** to `frontend`
-3. Add Environment Variables:
-   - `REACT_APP_API_URL`: Your backend URL (e.g., `https://your-backend.vercel.app`)
-4. Click "Deploy"
-
-### Option 2: Render (Alternative)
+### Option 1: Render + Netlify (Recommended)
 
 #### Backend Deployment (Render)
 1. Go to [render.com](https://render.com) and sign up
@@ -72,31 +53,31 @@ NODE_ENV=production
 
 #### Frontend (.env)
 ```env
-REACT_APP_API_URL=https://your-backend-url.vercel.app
+REACT_APP_API_URL=https://your-backend-url.onrender.com
 ```
 
 ## 🔗 Example URLs
 
 After deployment, your URLs will look like:
-- **Frontend**: `https://task-manager-frontend.vercel.app`
-- **Backend**: `https://task-manager-backend.vercel.app`
+- **Frontend**: `https://task-manager-frontend.netlify.app`
+- **Backend**: `https://task-manager-backend.onrender.com`
 
 ## 🛠️ Manual Deployment Commands
 
 If you prefer manual deployment:
 
-### Backend (Vercel CLI)
+### Backend (Render CLI)
 ```bash
 cd backend
-npm i -g vercel
-vercel --prod
+npm install
+npm start
 ```
 
-### Frontend (Vercel CLI)
+### Frontend (Netlify CLI)
 ```bash
 cd frontend
 npm run build
-vercel --prod
+npx netlify deploy --prod --dir=build
 ```
 
 ## 🐛 Troubleshooting

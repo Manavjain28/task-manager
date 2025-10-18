@@ -29,12 +29,9 @@ app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running' });
 });
 
-// Serve static files from the React app build directory
-app.use(express.static(path.join(__dirname, '../frontend/build')));
-
-// Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+// API routes only - frontend is deployed separately
+app.get('/', (req, res) => {
+  res.json({ message: 'Task Manager API is running!' });
 });
 
 // Error handling middleware
